@@ -12,24 +12,18 @@
 
 ## Error codes (LiquidityStorager)
 
-### General error related
+### General errors
 
-- `LS001` : `incorrect status of redeem`
-- `LS002` : `incorrect royalty withdrawal amount`
-- `LS003` : `incorrect royalty set amount`
-- `LS004` : `incorrect liquidity withdrawal amount`
+- `LS001` : incorrect status of redeem (already processed)
+- `LS002` : incorrect royalty withdrawal amount (more than available)
+- `LS003` : invalid royalty percentage (should be between 0–100)
 
+### Auth errors
 
-### Auth error related
+- `LS103` : only Bridge Owner can call this function
+- `LS104` : transfer not permitted by filter contract
 
-- `LS101` : `only Watcher can call this function`
-- `LS102` : `only Liquidity Provider can call this function`
-- `LS103` : `only Bridge Owner can call this function`
-- `LS104` : `transfer not permitted`
+### Swap-related errors
 
-
-### Swap method related
-
-- `LS201` : `value must me greater that 100`
-- `LS202` : `value must me lesser that balance`
-- `LS003` : `cannot swap to same chain id`
+- `LS203` : cannot swap to the same chain ID
+- `LS204` : value is less than minimal transfer amount
