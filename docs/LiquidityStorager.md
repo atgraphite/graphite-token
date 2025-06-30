@@ -93,6 +93,23 @@ function getMinTransferAmount() external view returns (uint256)
 
 ---
 
+### 💰 exchangeRoyalty
+
+```solidity
+uint256 public exchangeRoyalty
+```
+
+- Defines the **percentage-based royalty fee** taken from each swap or token transfer.
+- Expressed in whole numbers (e.g. `1` means 1%).
+- Deducted during `swap()` or `swapToken()` and added to the contract owner’s internal balance (`ownerBalance`).
+- Can be changed by the owner using:
+
+```solidity
+function setExchangeRoyalty(uint256 amount) external onlyOwner
+```
+
+---
+
 ## 🔷 LiquidityStoragerERC20 (Wrapped Graphite Token)
 
 ### 🔁 swapToken()
@@ -143,6 +160,23 @@ function setMinTransferAmount(uint256 amount) external onlyOwner
 ```solidity
 function getOwnerBalance() public view returns (uint256)
 function getMinTransferAmount() external view returns (uint256)
+```
+
+---
+
+### 💰 exchangeRoyalty
+
+```solidity
+uint256 public exchangeRoyalty
+```
+
+- Defines the **percentage-based royalty fee** taken from each swap or token transfer.
+- Expressed in whole numbers (e.g. `1` means 1%).
+- Deducted during `swap()` or `swapToken()` and added to the contract owner’s internal balance (`ownerBalance`).
+- Can be changed by the owner using:
+
+```solidity
+function setExchangeRoyalty(uint256 amount) external onlyOwner
 ```
 
 ---
